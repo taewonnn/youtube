@@ -21,7 +21,7 @@ function SearchHeader() {
   }, [keyword])
 
   return (
-    <header>
+    <header className='w-full flex p-4 text-2xl border-b border-zinc-600 mb-4' >
       <Link to='/'>
         <BsYoutube/>
         <h1>YouTube</h1>
