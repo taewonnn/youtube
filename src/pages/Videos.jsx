@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
 import VideoCard from "../components/VideoCard";
-import axios from "axios";
+import {search} from "../api/youtube";
 
 function Videos () {
 
@@ -11,13 +11,7 @@ function Videos () {
   // react-query
   // 형태 : const {isLoading, error, data: videos} = useQuery(캐시 key , 어떻게 가지고 오는지 함수로 전달 );
   const {isLoading, error, data: videos} = useQuery(
-    ['videos', keyword], async () => {
-      return axios.get(`/videos/${keyword ? 'search' : 'popular'}.json`)
-        .then((res) => {
-          console.log(res);
-          return res.data.items;
-        })
-    }
+    ['videos', keyword],() => search(keyword)
   );
 
 
