@@ -13,7 +13,7 @@ function Videos () {
   // 형태 : const {isLoading, error, data: videos} = useQuery(캐시 key , 어떻게 가지고 오는지 함수로 전달 );
   const {isLoading, error, data: videos} = useQuery(
     ['videos', keyword],() => {
-      const youtube = new Youtube()
+      const youtube = new FakeYoutube()
       return youtube.search(keyword);
     }
   );
