@@ -15,7 +15,7 @@ export default class FakeYoutube {
     return axios
       .get(`/videos/search.json`)
       .then(res => res.data.items)
-      .then(items => item.map(item => ({...item, id: item.id.videoId})))
+      .then((items) => items.map(item => ({...item, id: item.id.videoId})))
   }
 
   async #mostPopular() {
