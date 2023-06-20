@@ -16,9 +16,7 @@ function Videos () {
   // react-query
   // 형태 : const {isLoading, error, data: videos} = useQuery(캐시 key , 어떻게 가지고 오는지 함수로 전달 );
   const {isLoading, error, data: videos} = useQuery(
-    ['videos', keyword],() => {
-      youtube.search(keyword)
-    }
+    ['videos', keyword],() => youtube.search(keyword)
   );
 
 
