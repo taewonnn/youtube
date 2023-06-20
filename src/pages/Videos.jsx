@@ -3,18 +3,21 @@ import {useQuery} from "@tanstack/react-query";
 import VideoCard from "../components/VideoCard";
 import Youtube, {search} from "../api/youtube";
 import FakeYoutube from "../api/fakeYoutube";
+import {useYoutubeApi} from "../context/YoutubeApiContext";
 
 function Videos () {
 
   // parameter 사용
   const { keyword } = useParams();
 
+  // context
+  const { youtube } = useYoutubeApi();
+
   // react-query
   // 형태 : const {isLoading, error, data: videos} = useQuery(캐시 key , 어떻게 가지고 오는지 함수로 전달 );
   const {isLoading, error, data: videos} = useQuery(
     ['videos', keyword],() => {
-      const youtube = new FakeYoutube()
-      return youtube.search(keyword);
+      youtube.search(keyword)
     }
   );
 
