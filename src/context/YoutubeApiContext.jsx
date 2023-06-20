@@ -1,4 +1,4 @@
-import {createContext} from "react";
+import {createContext, useContext} from "react";
 import Youtube from "../api/youtube";
 
 export const YoutubeApiContext = createContext();
@@ -10,4 +10,8 @@ export function YoutubeApiProvider({ children }) {
       {children}
     </YoutubeApiProvider>
   )
+}
+
+export function useYoutubeApi() {
+  return useContext(YoutubeApiContext);
 }
