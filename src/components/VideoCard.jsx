@@ -1,7 +1,4 @@
-import { format, register } from "timeago.js";
-import koLocale from 'timeago.js/lib/lang/ko'
-
-register('ko', koLocale);
+import {formatAgo} from "../util/datae";
 
 function VideoCard ({ video }) {
 
@@ -13,7 +10,7 @@ function VideoCard ({ video }) {
       <div>
         <p>{title}</p>
         <p>{channelTitle}</p>
-        <p>{format(publishedAt, 'ko')}</p>
+        <p>{formatAgo(publishedAt, 'ko')}</p>
       </div>
     </li>
   )
