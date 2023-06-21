@@ -1,8 +1,11 @@
 function VideoCard ({ video }) {
+
+  const {title, thumbnails} = video.snippet
+
   return (
-    <div>
-      {video.snippet.title}
-    </div>
+    <li>
+      <img src={thumbnails.medium.url} alt={title} />
+    </li>
   )
 }
 
