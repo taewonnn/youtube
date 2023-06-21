@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import Videos from "./pages/Videos";
 import VideoDetail from "./pages/VideoDetail";
 
+
+// router 정의
 const router = createBrowserRouter([
   {
     path: '/',

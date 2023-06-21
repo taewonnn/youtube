@@ -2,11 +2,11 @@ import axios from "axios";
 
 export default class FakeYoutubeClient {
 
-  async search(keyword) {
+  async search() {
     return axios.get('/videos/search.json');
   }
 
-  async videos(keyword) {
+  async videos() {
     return axios.get('/videos/popular.json');
   }
 

@@ -6,10 +6,16 @@ import FakeYoutubeClient from "../api/fakeYoutubeClient";
 
 export const YoutubeApiContext = createContext();
 
-// const youtube =  new FakeYoutube();
+// mock data 사용
 const client = new FakeYoutubeClient();
+
+// 실제 서버 사용
+// const client = new YoutubeClient();
+
 const youtube = new Youtube(client);
 
+
+// 데이터 1개(youtube 인스턴스)를 전달해주는 우산
 export function YoutubeApiProvider({ children }) {
   return (
     <YoutubeApiContext.Provider value={{ youtube }}>

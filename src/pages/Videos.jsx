@@ -23,9 +23,8 @@ function Videos () {
 
   return (
     <>
-      <div>Videos
-        {/* keyword가 있다면 keyword를 보여주고, 없다면 Hot Trend */}
-        {keyword ? `${keyword}` : 'Hot Trend'}
+      {/* keyword가 있다면 keyword를 보여주고, 없다면 Hot Trend */}
+      <div>Videos {keyword ? `${keyword}` : 'Hot Trend'}
         {isLoading && <p>Loading...</p>}
         {error && <p>Something is wrong</p>}
         {videos && <ul className='grid grid-cols-1 sm:grid-cols-2 lg: grid-cols-3 xl: grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-6'>

@@ -4,6 +4,7 @@ export default class Youtube {
     this.apiClient = apiClient;
   }
 
+  // #이 없으면 공개함수 #이 붙어있다면 private(외부 인스턴스에서는 접근 불가)
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
