@@ -6,11 +6,14 @@ function VideoCard ({ video }) {
 
   return (
     <li>
-      <img src={thumbnails.medium.url} alt={title} />
+      <img
+        className='w-full'
+        src={thumbnails.medium.url}
+        alt={title} />
       <div>
-        <p>{title}</p>
-        <p>{channelTitle}</p>
-        <p>{formatAgo(publishedAt, 'ko')}</p>
+        <p className='font-bold my-2'>{title}</p>
+        <p className='text-sm opacity-80'>{channelTitle}</p>
+        <p className='text-sm opacity-80'>{formatAgo(publishedAt, 'ko')}</p>
       </div>
     </li>
   )
