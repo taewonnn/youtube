@@ -10,7 +10,8 @@ function VideoCard({video}) {
 
   return (
     <li onClick={() => {
-      navigate(`videos/watch/${video.id}`, {state: {video}})
+      console.log(video.id)
+      navigate(`videos/watch/${video.id}`, {state: {video:video}})
     }}>
       <img
         className='w-full'
