@@ -14,9 +14,19 @@ export default class Youtube {
       .then((res) => res.data.items[0].snippet.thumnails.default.url);
   }
 
-  async RelatedVideos(id) {
-    return this.apiClient.search({params: {part: 'snippet', maxResults: 25, type: 'video', relatedToVideoId: id}})
-      .then(res => res.data.items.map(item => ({...item, id: item.id.videoId})))
+  async relatedVideos(id) {
+    return this.apiClient
+      .search({
+        params: {
+          part: 'snippet',
+          maxResults: 25,
+          type: 'video',
+          relatedToVideoId: id
+        },
+      })
+      .then((res) =>
+        res.data.items.map(item => ({...item, id: item.id.videoId}))
+      )
   }
 
   async #searchByKeyword(keyword) {
