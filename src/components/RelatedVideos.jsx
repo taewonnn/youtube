@@ -1,8 +1,8 @@
-function RelatedVideos ({  }) {
+function RelatedVideos ({ id }) {
   return (
-    <>
-
-    </>
+    <div>
+      {id}
+    </div>
   )
 }
 
