@@ -11,7 +11,11 @@ function VideoCard({video}) {
   return (
     <li onClick={() => {
       console.log(video)
-      navigate(`watch/${video.id}`, {state: {video}})
+      // '/'를 붙이면 절대경로 ->
+      // './'을 붙이면 상대경로 -> 현 위치로부터의 경로
+      // /video/watch =>  videos
+
+      navigate(`/videos/watch/${video.id}`, {state: {video}})
     }}>
       <img
         className='w-full'
