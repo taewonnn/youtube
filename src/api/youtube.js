@@ -9,9 +9,9 @@ export default class Youtube {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
 
-  async ChannelImageURL(id) {
+  async ChannelImageUrl(id) {
     return this.apiClient.channels({params: {part: 'snippet', id: id}})
-      .then((res) => res.data.items[0].snippet.thumnails.default.url);
+      .then((res) => res.data.items[0].snippet.thumbnails.default.url);
   }
 
   async relatedVideos(id) {

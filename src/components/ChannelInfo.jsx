@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 function ChannelInfo({id, name}) {
 
   const { youtube } = useYoutubeApi();
-  const { error, isLoading, data: url } = useQuery(['channel', id], () => youtube.ChannelImageURL(id));
+  const { error, isLoading, data: url } = useQuery(['channel', id], () => youtube.ChannelImageUrl(id));
 
   return (
     <div>
