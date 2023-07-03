@@ -1,17 +1,17 @@
-import {formatAgo} from "../util/datae";
-import {useNavigate} from "react-router-dom";
+import { formatAgo } from "../util/datae";
+import { useNavigate } from "react-router-dom";
 
-function VideoCard({ video }) {
+function VideoCard({video}) {
 
-  const { title, thumbnails, channelTitle, publishedAt } = video.snippet
+  const {title, thumbnails, channelTitle, publishedAt} = video.snippet
 
   // useNavigate
   const navigate = useNavigate();
 
   return (
     <li onClick={() => {
-      console.log(video.id)
-      navigate(`videos/watch/${video.id}`, {state: {video}})
+      console.log(video)
+      navigate(`watch/${video.id}`, {state: {video}})
     }}>
       <img
         className='w-full'
