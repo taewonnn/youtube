@@ -8,7 +8,7 @@ function ChannelInfo({id, name}) {
 
   return (
     <div>
-      {url && <img src={url} alt={name} /> }
+      { url && <img src={url} alt={name} /> }
       <p>{name}</p>
     </div>
   )
