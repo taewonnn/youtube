@@ -22,7 +22,7 @@ function VideoCard({video, type}) {
       navigate(`/videos/watch/${video.id}`, {state: {video}})
     }}>
       <img
-        className='w-full'
+        className={isList ? 'w-60' : 'w-full'}
         src={thumbnails.medium.url}
         alt={title}/>
       <div>
