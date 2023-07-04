@@ -1,15 +1,19 @@
 import { formatAgo } from "../util/datae";
 import { useNavigate } from "react-router-dom";
 
-function VideoCard({video}) {
+function VideoCard({video, type}) {
 
   const {title, thumbnails, channelTitle, publishedAt} = video.snippet
 
   // useNavigate
   const navigate = useNavigate();
 
+  const isList = type === 'list'
+
   return (
-    <li onClick={() => {
+    <li
+      className={isList ? 'flex gap-1 m-2' : ''}
+      onClick={() => {
       console.log(video)
       // '/'를 붙이면 절대경로 ->
       // './'을 붙이면 상대경로 -> 현 위치로부터의 경로
