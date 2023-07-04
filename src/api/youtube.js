@@ -1,4 +1,3 @@
-
 export default class Youtube {
   constructor(apiClient) {
     this.apiClient = apiClient;
@@ -32,13 +31,13 @@ export default class Youtube {
   async #searchByKeyword(keyword) {
     return this.apiClient
       .search({
-      params: {
-        part: 'snippet',
-        maxResults: 25,
-        type: 'video',
-        q: keyword,
-      },
-    })
+        params: {
+          part: 'snippet',
+          maxResults: 25,
+          type: 'video',
+          q: keyword,
+        },
+      })
       .then(res => res.data.items)
       .then((items) => items.map(item => ({...item, id: item.id.videoId})))
   }
@@ -46,13 +45,13 @@ export default class Youtube {
   async #mostPopular() {
     return this.apiClient
       .videos({
-      params: {
-        part: 'snippet',
-        maxResults: 25,
-        type: 'video',
-        chart: 'mostPopular',
-      }
-    })
+        params: {
+          part: 'snippet',
+          maxResults: 25,
+          type: 'video',
+          chart: 'mostPopular',
+        }
+      })
       .then(res => {
         console.log(res.data.items)
         return res.data.items
