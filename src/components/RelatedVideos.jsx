@@ -5,7 +5,7 @@ import VideoCard from "./VideoCard";
 function RelatedVideos ({ id }) {
 
   const { youtube } = useYoutubeApi();
-  const { error, isLoading, videos } = useQuery(['related', id], () => youtube.relatedVideos(id));
+  const { error, isLoading, data: videos } = useQuery(['related', id], () => youtube.relatedVideos(id));
 
   return (
     <>
@@ -14,7 +14,7 @@ function RelatedVideos ({ id }) {
       {videos && (
         <ul>
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} type='list' />
           ))}
         </ul>
       )}
