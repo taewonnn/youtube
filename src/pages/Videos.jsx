@@ -11,7 +11,6 @@ function Videos() {
   const {keyword} = useParams();
 
   // context
-
   const {youtube} = useYoutubeApi();
 
   // react-query
