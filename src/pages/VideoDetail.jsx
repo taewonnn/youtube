@@ -19,8 +19,8 @@ export default function VideoDetail() {
           height='640'
           src={`http://www.youtube.com/embed/${video.id}`}
         />
-        <div>
-          <h2>{title}</h2>
+        <div className='p-8'>
+          <h2 className='text-xl font-bold'>{title}</h2>
           <ChannelInfo id={channelId} name={channelTitle} />
           <pre className='whitespace-pre-wrap'>{description}</pre>
         </div>
